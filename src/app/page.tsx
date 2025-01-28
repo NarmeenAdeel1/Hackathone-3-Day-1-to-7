@@ -1,101 +1,269 @@
+import Header from "../components/header";
 import Image from "next/image";
+import Footer from "../components/footer";
+import { FaTruck, FaCheckCircle, FaEnvelope, FaLeaf } from "react-icons/fa"; // React Icons library
+import Prodcuts from "../components/products";
+import "./globals.css";
+import HeaderSection from "../components/header";
 
-export default function Home() {
+
+
+export default function page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Header />
+      {/* Main container */}
+      <div
+        className="container mx-auto flex items-center bg-[#2A254B] rounded-lg shadow-lg mt-10"
+        style={{ maxWidth: "1200px", height: "500px" }} // Height reduced
+      >
+        {/* Text Section */}
+        <div className="w-1/2 flex flex-col p-8 self-start mb-8">
+          <h1 className="text-4xl font-satoshi text-gray-50 self-start">
+            The furniture brand for the <br /> future, with timeless designs
+          </h1>
+          <br />
+          <br />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Corrected Button */}
+          <button
+            className="bg-[#494565] text-gray-50 font-satoshi font-medium rounded"
+            style={{
+              width: "160px", // Increased Width
+              height: "60px", // Increased Height
+              fontSize: "16px", // Adjusted Font Size
+              lineHeight: "24px", // Correct Line Height
+              fontWeight: 400, // Medium Font Weight
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            View Collection
+          </button>
+
+          {/* Updated Paragraph */}
+          <p
+            className="text-gray-50 absolute -bottom-10"
+            style={{
+              fontSize: "14px", // Reduced font size
+              lineHeight: "20px", // Adjusted line height
+              marginTop: "auto", // Push paragraph to bottom of text section
+            }}
           >
-            Read our docs
-          </a>
+            A new era in eco-friendly furniture with Avelon, the French luxury
+            retail brand <br />
+            with nice fonts, tasteful colors, and a beautiful way to display
+            things digitally <br />
+            using modern web technologies.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Image Section */}
+        <div className="w-1/2 flex justify-end">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/dandychair.jpg"
+            width={400} // Width adjusted for proper scaling
+            height={500} // Height matches container
+            alt="The Dandy Chair"
+            className=""
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+      </div>
+      <div
+        className="bg-[#F8F8F8] py-10 px-4"
+        style={{ maxWidth: "1200px", margin: "auto" }} // Centered container
+      >
+        {/* Main Heading */}
+        <h1 className="text-center text-2xl font-bold text-gray-800 mb-8">
+          What makes our brand different
+        </h1>
+
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Card 1 */}
+          <div className="text-center bg-white p-6 shadow-lg rounded">
+            <FaTruck size={48} className="text-blue-500 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Next Day As Standard
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              Order before 3pm and get your order the next day as standard{" "}
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="text-center bg-white p-6 shadow-lg rounded">
+            <FaCheckCircle size={48} className="text-green-500 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Made by true artisans
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              Handmade crafted goods made with real passion and craftmanship
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="text-center bg-white p-6 shadow-lg rounded">
+            <FaEnvelope size={48} className="text-orange-500 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Unbeatable prices{" "}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              For our materials and quality you won’t find better prices
+              anywhere{" "}
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div className="text-center bg-white p-6 shadow-lg rounded">
+            <FaLeaf size={48} className="text-green-700 mx-auto mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              Recycled packaging{" "}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2">
+              We use 100% recycled packaging to ensure our footprint is
+              manageable{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <Prodcuts />
+
+
+      <div className="container mx-auto flex items-center justify-center mt-10">
+        <button
+          className="bg-gray-300 text-black font-satoshi font-bold rounded absolute items-center w-[260px]"
+          style={{
+            width: "260px", // Increased Width
+            height: "60px", // Increased Height
+            fontSize: "16px", // Adjusted Font Size
+            lineHeight: "24px", // Correct Line Height
+            fontWeight: 400, // Medium Font Weight
+          }}
         >
+          View Collection
+        </button>
+      </div>{" "}
+      <br />
+      <br /> <br />
+
+      <div className="container mx-auto mt-10">
+        <h1 className="text-2xl font-bold text-center mb-8">
+          Our Popular Products
+        </h1>{" "}
+      </div>
+
+
+      <div className="flex justify-center gap-4 px-4">
+        {/* Item 1 */}
+        <div className="text-center">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            src="/popularsofa.jpg"
+            alt="Popular Sofa"
+            className="w-[480px] h-full object-cover"
+            width={480}
+            height={200}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+
+        {/* Item 2 */}
+        <div className="text-center">
+          <Image
+            src="/greychair.jpg"
+            alt="Grey Chair"
+            width={280}
+            height={200}
+          />
+        </div>
+
+        {/* Item 3 */}
+        <div className="text-center">
+          <Image
+            src="/dandychair.jpg"
+            alt="Dandy Chair"
+            width={280}
+            height={200}
+          />
+        </div>
+      </div>
+
+
+
+
+      <div className="container mx-auto flex items-center justify-center mt-10">
+        <button
+          className="bg-gray-300 text-black font-satoshi font-bold rounded absolute items-center w-[260px]"
+          style={{
+            width: "260px", // Increased Width
+            height: "60px", // Increased Height
+            fontSize: "16px", // Adjusted Font Size
+            lineHeight: "24px", // Correct Line Height
+            fontWeight: 400, // Medium Font Weight
+          }}
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          View Collection
+        </button>
+      </div>{" "}
+      <br />
+      <br /> <br />
+      <div className="flex flex-col items-center">
+        <h1 className=" flex font-clash text-clash-36 justify-center whitespace-nowrap">
+          Join the club and get the benefits
+        </h1>
+        <p className="font-satoshi size-20 whitespace-nowrap text-center flex justify-center">
+          Sign up for our newsletter and receive exclusive offers on new <br />{" "}
+          ranges, sales, pop up stores and more
+        </p>
+      </div>
+      {/* Sign Up Section */}
+      <div className="text-white w-full sm:w-auto flex justify-center">
+        <div className="mt-4">
+          <input
+            type="text"
+            placeholder="your@email.com"
+            className="w-full sm:w-[250px] lg:w-[300px] h-[48px] p-2 bg-transparent opacity-35 border border-white rounded-md"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <button className="mt-2 sm:mt-0 sm:ml-2 w-full sm:w-[100px] h-[48px] bg-white text-[#2A254B] rounded-md">
+            {" "}
+            SIGN UP
+          </button>
+        </div>
+      </div>
+      <br />
+      <div className="flex w-[1440px] h-[603px]">
+        {/* Left Side Text */}
+        <div className="flex flex-col w-[536px] h-[225px] ml-[84px] mt-[72px] gap-[25px]">
+          <h1 className="text-3xl font-clash">
+            {" "}
+            From a studio in London to a <br /> global brand with over 400{" "}
+            <br />
+            outlets{" "}
+          </h1>
+          <p className="text-lg font-thin">
+            When we started Avion, the idea was simple. Make high quality
+            furniture affordable and available for the mass market.
+          </p>
+          <p className="text-lg">
+            Handmade, and lovingly crafted furniture and homeware is what we
+            live. breathe and design so our Chelsea boutique become the hotbed
+            for the London interior design community.
+          </p>{" "}
+          <br />
+          <br />
+          <p className="text-lg">Get In Touch</p>
+        </div>
+
+        {/* Right Side Image */}
+        <div className="w-[720px] h-[603px] ml-auto">
+          <img
+            src="/HPLP.jpg"
+            alt="Example"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <Footer />
     </div>
+    
   );
 }
